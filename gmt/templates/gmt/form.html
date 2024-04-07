@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ask Me!</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="phone_number">Enter phone number (with country code):</label>
+        <input type="text" id="phone_number" name="phone_number"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div>
+        <h1>Timezone Information</h1>
+        <p>Name: {{ name }}</p>
+        <p>Timezone: {{ result.0 }}</p>
+        <p>GMT: {{ result.1 }}</p>
+    </div>
+</body>
+</html>
